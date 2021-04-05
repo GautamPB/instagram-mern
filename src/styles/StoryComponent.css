@@ -1,0 +1,30 @@
+.storyComponent {
+    display: grid;
+    place-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.storyComponent__photo {
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    padding: 2px;
+}
+
+.storyComponent__image {
+    padding: 2px;
+    border: solid 1px lightgray;
+    border-radius: 999px;
+}
+
+.storyComponent__image > img {
+    width: 55px;
+    height: 55px;
+    margin: auto;
+    border-radius: 999px;
+}
+
+p {
+    font-size: 13px;
+    color: gray;
+}

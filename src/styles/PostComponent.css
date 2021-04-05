@@ -1,0 +1,22 @@
+.postComponent {
+    margin-top: 20px;
+    border: solid 1px lightgray;
+    background-color: white;
+}
+
+.postComponent__top {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px lightgray;
+}
+
+.postComponent__topLeft {
+    display: flex;
+    align-items: center;
+}
+
+.postComponent__topLeft > h4 {
+    margin-left: 10px;
+    font-size: 15px;
+}
