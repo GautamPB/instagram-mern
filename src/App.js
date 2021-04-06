@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header'
 import Story from './components/Story'
-import PostComponent from './components/PostComponent'
+import Post from './components/Post'
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
             <div className="app__body">
                 <div className="app__leftBody">
                     <Story />
-                    <PostComponent />
+                    <Post />
                 </div>
 
                 <div className="app__rightBody">

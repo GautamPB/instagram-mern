@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     border-bottom: solid 1px lightgray;
+    justify-content: space-between;
 }
 
 .postComponent__topLeft {
@@ -19,4 +20,42 @@
 .postComponent__topLeft > h4 {
     margin-left: 10px;
     font-size: 15px;
+}
+
+.post__bodyImage > img {
+    width: 100%;
+}
+
+.post__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.post__footerLeft > .MuiSvgIcon-root {
+    font-size: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.post__footerRight > .MuiSvgIcon-root {
+    font-size: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.post__comment {
+    border-top: solid 1px lightgray;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.post__comment > input {
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 17px;
 }

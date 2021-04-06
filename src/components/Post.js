@@ -10,7 +10,17 @@ const Post = () => {
                 name="google"
                 image="https://code.org/shared/images/social-media/codeorg2020_social.png"
             />
-            {/* <PostComponent /> */}
+            <PostComponent
+                name="facebook"
+                image="https://inteng-storage.s3.amazonaws.com/img/iea/9lwjAVnM6E/sizes/ocde_resize_md.jpg"
+                profile="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
+            />
+
+            <PostComponent
+                name="facebook"
+                image="https://i.pinimg.com/originals/2f/37/5c/2f375cd801a906e5c3a57b3baced8ca1.gif"
+                profile="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
+            />
         </div>
     )
 }
