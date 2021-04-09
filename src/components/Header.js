@@ -6,8 +6,11 @@ import SearchIcon from '@material-ui/icons/Search'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import { IconButton, Avatar } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../StateProvider'
 
 const Header = () => {
+    const [{ user }] = useStateValue()
+
     return (
         <div className="header">
             <div className="header__left">
@@ -44,7 +47,10 @@ const Header = () => {
                 </IconButton>
 
                 <Link to="/login">
-                    <Avatar className="header__avatar" />
+                    <Avatar
+                        src={user ? user.photoURL : ''}
+                        className="header__avatar"
+                    />
                 </Link>
             </div>
         </div>

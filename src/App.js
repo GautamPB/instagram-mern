@@ -6,8 +6,11 @@ import Story from './components/Story'
 import Post from './components/Post'
 import Login from './components/Login'
 import Recommended from './components/Recommended'
+import { useStateValue } from './StateProvider'
 
 function App() {
+    const [{ user }] = useStateValue()
+
     return (
         <Router>
             <div className="app">
@@ -28,10 +31,12 @@ function App() {
                             <div className="app__rightBody">
                                 <div className="app__rightBodyUser">
                                     <Recommended
-                                        profile="https://images.g2crowd.com/uploads/vendor/image/378/1391173225.png"
-                                        username="oracle"
-                                        text="followed by many"
-                                        button_text="Switch"
+                                        profile={user ? user.photoURL : ''}
+                                        username={
+                                            user ? user.displayName : 'Login'
+                                        }
+                                        text=""
+                                        button_text={user ? 'Switch' : 'Login'}
                                     />
                                 </div>
 

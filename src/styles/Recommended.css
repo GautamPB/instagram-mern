@@ -1,6 +1,11 @@
 .recommended {
     margin-top: 15px;
     display: flex;
+    align-items: center;
+}
+
+.recommended__profile {
+    cursor: pointer;
 }
 
 .recommended__details {
@@ -11,6 +16,11 @@
 .recommended__details > h6 {
     font-size: 15px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+.recommended__details > h6:hover {
+    text-decoration: underline;
 }
 
 .recommended__button > button {
@@ -18,6 +28,6 @@
     border: none;
     outline: none;
     cursor: pointer;
-    color: #405de6;
+    color: #1877f2;
     font-weight: bold;
 }

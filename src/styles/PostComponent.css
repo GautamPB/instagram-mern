@@ -20,6 +20,11 @@
 .postComponent__topLeft > h4 {
     margin-left: 10px;
     font-size: 15px;
+    cursor: pointer;
+}
+
+.postComponent__topLeft > h4:hover {
+    text-decoration: underline;
 }
 
 .post__bodyImage > img {
@@ -71,6 +76,7 @@ form {
     border: none;
     outline: none;
     font-size: 15px;
-    color: #405de6;
+    color: #1877f2;
     font-weight: 550;
+    cursor: pointer;
 }

@@ -18,6 +18,7 @@
 .app__rightBody {
     flex: 0.35;
     margin-right: 110px;
+    /* position: fixed; */
 }
 
 .app__rightBodyUser {

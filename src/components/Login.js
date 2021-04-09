@@ -3,8 +3,35 @@ import '../styles/Login.css'
 import { Button } from '@material-ui/core'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import login__picture from '../assets/login_picture.PNG'
+import { auth, provider } from '../firebase'
+import { useStateValue } from '../StateProvider'
+import { useHistory } from 'react-router-dom'
+import { actionTypes } from '../reducer'
 
 const Login = () => {
+    const [{ user }, dispatch] = useStateValue()
+
+    const history = useHistory()
+
+    const handleGoogleLogin = () => {
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                console.log(result.user)
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    user: result.user,
+                })
+                history.push('/')
+            })
+            .catch((error) => {
+                alert(error)
+            })
+    }
+
+    const handleFacebookLogin = () => {
+        console.log('Login with Facebook')
+    }
+
     return (
         <div className="login">
             <div className="login__picture">
@@ -20,7 +47,10 @@ const Login = () => {
 
             <div className="login__options">
                 <div className="login__facebook login__option">
-                    <Button className="login__facebook">
+                    <Button
+                        className="login__facebook"
+                        onClick={handleFacebookLogin}
+                    >
                         <FacebookIcon />
                         Login with Facebook
                     </Button>
@@ -31,7 +61,12 @@ const Login = () => {
                         src="http://pngimg.com/uploads/google/google_PNG19635.png"
                         alt=""
                     />
-                    <Button className="login__google">Login with Google</Button>
+                    <Button
+                        onClick={handleGoogleLogin}
+                        className="login__google"
+                    >
+                        Login with Google
+                    </Button>
                 </div>
             </div>
         </div>
