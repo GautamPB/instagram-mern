@@ -1,0 +1,23 @@
+.recommended {
+    margin-top: 15px;
+    display: flex;
+}
+
+.recommended__details {
+    margin-left: 10px;
+    width: 60%;
+}
+
+.recommended__details > h6 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.recommended__button > button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #405de6;
+    font-weight: bold;
+}

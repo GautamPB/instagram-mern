@@ -19,3 +19,11 @@
     flex: 0.35;
     margin-right: 110px;
 }
+
+.app__rightBodyUser {
+    margin-bottom: 30px;
+}
+
+.app__rightBodySuggestions > h4 {
+    color: gray;
+}
