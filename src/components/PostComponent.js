@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/PostComponent.css'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Avatar } from '@material-ui/core'
@@ -9,6 +9,23 @@ import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 
 const PostComponent = ({ profile, name, image }) => {
+    const [comment, setComment] = useState('')
+
+    const handleComment = (e) => {
+        e.preventDefault()
+        console.log(comment)
+        setComment('')
+    }
+
+    useEffect(() => {
+        const submitButton = document.querySelector('.commentSubmit')
+        if (comment.length === 0) {
+            submitButton.disabled = true
+        } else {
+            submitButton.disabled = false
+        }
+    }, [comment])
+
     return (
         <div className="postComponent">
             <div className="postComponent__top">
@@ -41,7 +58,21 @@ const PostComponent = ({ profile, name, image }) => {
 
             <div className="post__comment">
                 <InsertEmoticonIcon />
-                <input type="text" placeholder="Add a comment..." />
+                <form>
+                    <input
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                        type="text"
+                        placeholder="Add a comment..."
+                    />
+                    <button
+                        className="commentSubmit"
+                        onClick={handleComment}
+                        type="submit"
+                    >
+                        Post
+                    </button>
+                </form>
             </div>
         </div>
     )

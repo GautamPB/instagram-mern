@@ -17,6 +17,5 @@
 
 .app__rightBody {
     flex: 0.35;
-    border: solid 1px lightgray;
     margin-right: 110px;
 }

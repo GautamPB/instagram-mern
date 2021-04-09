@@ -48,14 +48,29 @@
     border-top: solid 1px lightgray;
     padding: 15px;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     display: flex;
 }
 
-.post__comment > input {
+form {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.post__comment > form > input {
     margin-left: 10px;
     border: none;
     outline: none;
     width: 100%;
     font-size: 17px;
+}
+
+.post__comment > form > button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #405de6;
+    font-weight: 550;
 }

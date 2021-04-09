@@ -5,15 +5,18 @@ import ChatBubbleIcon from '@material-ui/icons/ChatBubble'
 import SearchIcon from '@material-ui/icons/Search'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import { IconButton, Avatar } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
         <div className="header">
             <div className="header__left">
-                <img
-                    src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-                    alt=""
-                />
+                <Link to="/">
+                    <img
+                        src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+                        alt=""
+                    />
+                </Link>
             </div>
 
             <div className="header__center">
@@ -22,9 +25,11 @@ const Header = () => {
             </div>
 
             <div className="header__right">
-                <IconButton className="header__icon">
-                    <HomeIcon />
-                </IconButton>
+                <Link to="/">
+                    <IconButton className="header__icon">
+                        <HomeIcon />
+                    </IconButton>
+                </Link>
 
                 <IconButton className="header__icon">
                     <ChatBubbleIcon />
@@ -38,7 +43,9 @@ const Header = () => {
                     <FavoriteBorderIcon />
                 </IconButton>
 
-                <Avatar className="header__avatar" />
+                <Link to="/login">
+                    <Avatar className="header__avatar" />
+                </Link>
             </div>
         </div>
     )
