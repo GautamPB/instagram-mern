@@ -8,7 +8,7 @@ import SendIcon from '@material-ui/icons/Send'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 
-const PostComponent = ({ profile, name, image }) => {
+const PostComponent = ({ profile, username, image, capiton }) => {
     const [comment, setComment] = useState('')
 
     const handleComment = (e) => {
@@ -31,7 +31,7 @@ const PostComponent = ({ profile, name, image }) => {
             <div className="postComponent__top">
                 <div className="postComponent__topLeft">
                     <Avatar src={profile} />
-                    <h4>{name}</h4>
+                    <h4>{username}</h4>
                 </div>
 
                 <div className="postComponent__topRight">
@@ -53,6 +53,10 @@ const PostComponent = ({ profile, name, image }) => {
                     <div className="post__footerRight">
                         <BookmarkBorderIcon />
                     </div>
+                </div>
+                <div className="post__caption">
+                    <h4>{username}</h4>
+                    <p>{capiton}</p>
                 </div>
             </div>
 
