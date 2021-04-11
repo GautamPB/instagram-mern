@@ -37,6 +37,7 @@ function App() {
                                         }
                                         text=""
                                         button_text={user ? 'Switch' : 'Login'}
+                                        verified={false}
                                     />
                                 </div>
 
@@ -47,6 +48,7 @@ function App() {
                                         username="sundarpichai"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -54,6 +56,7 @@ function App() {
                                         username="zuck"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -61,6 +64,7 @@ function App() {
                                         username="timcook"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -68,6 +72,7 @@ function App() {
                                         username="satyanadella"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -75,6 +80,7 @@ function App() {
                                         username="jeffbezos"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -82,6 +88,7 @@ function App() {
                                         username="elonmusk"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -89,6 +96,7 @@ function App() {
                                         username="petelau"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
 
                                     <Recommended
@@ -96,6 +104,7 @@ function App() {
                                         username="therealstanlee"
                                         text="followed by many"
                                         button_text="Follow"
+                                        verified={true}
                                     />
                                 </div>
                             </div>

@@ -46,7 +46,7 @@ const Header = () => {
                     <FavoriteBorderIcon />
                 </IconButton>
 
-                <Link to="/login">
+                <Link to={!user ? '/login' : '/'}>
                     <Avatar
                         src={user ? user.photoURL : ''}
                         className="header__avatar"

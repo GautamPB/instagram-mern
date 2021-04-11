@@ -3,18 +3,36 @@ import '../styles/Login.css'
 import { Button } from '@material-ui/core'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import login__picture from '../assets/login_picture.PNG'
-import { auth, provider } from '../firebase'
+import { auth, provider, facebookProvider } from '../firebase'
 import { useStateValue } from '../StateProvider'
 import { useHistory } from 'react-router-dom'
 import { actionTypes } from '../reducer'
 
 const Login = () => {
-    const [{ user }, dispatch] = useStateValue()
+    const [, dispatch] = useStateValue()
 
     const history = useHistory()
 
     const handleGoogleLogin = () => {
         auth.signInWithPopup(provider)
+            .then((result) => {
+                console.log(result.user)
+                const credential = result.credential
+                const accessToken = credential.accessToken
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    user: result.user,
+                })
+                history.push('/')
+                console.log(accessToken)
+            })
+            .catch((error) => {
+                alert(error)
+            })
+    }
+
+    const handleFacebookLogin = () => {
+        auth.signInWithPopup(facebookProvider)
             .then((result) => {
                 console.log(result.user)
                 dispatch({
@@ -26,10 +44,6 @@ const Login = () => {
             .catch((error) => {
                 alert(error)
             })
-    }
-
-    const handleFacebookLogin = () => {
-        console.log('Login with Facebook')
     }
 
     return (

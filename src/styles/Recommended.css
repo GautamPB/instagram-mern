@@ -13,14 +13,26 @@
     width: 60%;
 }
 
-.recommended__details > h6 {
+.recommended__details > .recommended__username > h6 {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
 }
 
-.recommended__details > h6:hover {
+.recommended__details > .recommended__username > h6:hover {
     text-decoration: underline;
+}
+
+.recommended__username {
+    display: flex;
+    align-items: center;
+}
+
+.recommended__username > img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    margin-left: 5px;
 }
 
 .recommended__button > button {
