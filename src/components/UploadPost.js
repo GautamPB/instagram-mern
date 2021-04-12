@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/UploadPost.css'
+import { useStateValue } from '../StateProvider'
 
 const UploadPost = () => {
     const [imageURL, setImageURL] = useState('')
     const [caption, setCaption] = useState('')
+
+    const [{ user }] = useStateValue()
 
     const handlePost = (e) => {
         e.preventDefault()
@@ -13,8 +16,17 @@ const UploadPost = () => {
         setCaption('')
     }
 
+    useEffect(() => {
+        const component = document.querySelector('.uploadPost')
+        if (!user) {
+            component.classList.add('hidden')
+        } else {
+            component.classList.remove('hidden')
+        }
+    })
+
     return (
-        <div className="uploadPost">
+        <div className="uploadPost hidden">
             <h3>Post New Image</h3>
             <form>
                 <input

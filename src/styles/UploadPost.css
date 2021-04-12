@@ -35,3 +35,7 @@
     background: transparent;
     color: #1877f2;
 }
+
+.hidden {
+    display: none;
+}

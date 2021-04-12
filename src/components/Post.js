@@ -29,7 +29,7 @@ const Post = () => {
             </div>
 
             <div className="post__input">
-                <UploadPost />
+                <UploadPost className="uploadPost" />
             </div>
         </div>
     )
