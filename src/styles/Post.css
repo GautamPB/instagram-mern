@@ -1,4 +1,10 @@
-.post {
+.post__body {
     display: flex;
     flex-direction: column;
+}
+
+.post__input {
+    position: sticky;
+    bottom: 0px;
+    z-index: 1;
 }
