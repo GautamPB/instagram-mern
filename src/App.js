@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
@@ -7,9 +7,21 @@ import Post from './components/Post'
 import Login from './components/Login'
 import Recommended from './components/Recommended'
 import { useStateValue } from './StateProvider'
+import Pusher from 'pusher-js'
 
 function App() {
     const [{ user }] = useStateValue()
+
+    useEffect(() => {
+        const pusher = new Pusher('b719ded298a39cd4c450', {
+            cluster: 'eu',
+        })
+
+        const channel = pusher.subscribe('posts')
+        channel.bind('inserted', function (data) {
+            alert(JSON.stringify(data))
+        })
+    }, [])
 
     return (
         <Router>

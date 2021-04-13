@@ -42,7 +42,7 @@ const UploadPost = () => {
                     onChange={(e) => setCaption(e.target.value)}
                     className="uploadPost__caption"
                     type="text"
-                    placeholder="Comment"
+                    placeholder="Caption"
                 />
 
                 <button type="submit" onClick={handlePost}>
