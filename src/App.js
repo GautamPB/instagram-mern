@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
@@ -8,9 +8,22 @@ import Login from './components/Login'
 import Recommended from './components/Recommended'
 import { useStateValue } from './StateProvider'
 import Pusher from 'pusher-js'
+import axios from './axios'
 
-function App() {
+const App = () => {
     const [{ user }] = useStateValue()
+
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        // to fetch from API Routes
+        axios.get('/sync').then((response) => {
+            console.log(response.data)
+            setPosts(response.data)
+        })
+    }, [])
+
+    console.log(posts)
 
     useEffect(() => {
         const pusher = new Pusher('b719ded298a39cd4c450', {
@@ -19,9 +32,15 @@ function App() {
 
         const channel = pusher.subscribe('posts')
         channel.bind('inserted', function (data) {
-            alert(JSON.stringify(data))
+            // alert(JSON.stringify(data))
+            setPosts([...posts, data])
         })
-    }, [])
+
+        return () => {
+            channel.unbind_all()
+            channel.unsubscribe()
+        }
+    }, [posts])
 
     return (
         <Router>
@@ -37,7 +56,7 @@ function App() {
                         <div className="app__body">
                             <div className="app__leftBody">
                                 <Story />
-                                <Post />
+                                <Post posts={posts} />
                             </div>
 
                             <div className="app__rightBody">

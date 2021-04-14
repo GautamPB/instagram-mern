@@ -5,6 +5,7 @@ const instance = mongoose.Schema({
     user: String,
     image: String,
     // comments: [],
+    profile: String,
 })
 
 export default mongoose.model('posts', instance)

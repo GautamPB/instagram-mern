@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/UploadPost.css'
 import { useStateValue } from '../StateProvider'
+import axios from '../axios'
 
 const UploadPost = () => {
     const [imageURL, setImageURL] = useState('')
@@ -8,10 +9,14 @@ const UploadPost = () => {
 
     const [{ user }] = useStateValue()
 
-    const handlePost = (e) => {
+    const handlePost = async (e) => {
         e.preventDefault()
-        console.log(imageURL)
-        console.log(caption)
+        await axios.post('/upload', {
+            user: user.displayName,
+            caption: caption,
+            image: imageURL,
+            profile: user.photoURL,
+        })
         setImageURL('')
         setCaption('')
     }
